@@ -1,9 +1,9 @@
 "use strict";
 exports.__esModule = true;
-var ArrayComponent = /** @class */ (function () {
-    function ArrayComponent() {
+var ArrayManipulations = /** @class */ (function () {
+    function ArrayManipulations() {
     }
-    ArrayComponent.prototype.arrayMultiply = function (myArray) {
+    ArrayManipulations.prototype.arrayFindMultiples = function (myArray) {
         var temp = [], j = 0;
         for (var i = 0; i < myArray.length; i++) {
             if (myArray[i] % 5 === 0 || myArray[i] % 10 === 0) {
@@ -13,17 +13,17 @@ var ArrayComponent = /** @class */ (function () {
         }
         return temp;
     };
-    ArrayComponent.prototype.arraySeparate = function (myArray) {
+    ArrayManipulations.prototype.arraySeparate = function (myArray) {
         var str = [], j = 0;
         for (var i = 0; i < myArray.length; i++) {
-            if (typeof (myArray[i]) === "string") {
+            if (typeof myArray[i] === "string") {
                 str[j] = myArray[i];
                 j++;
             }
         }
         return str;
     };
-    ArrayComponent.prototype.arraySplit = function (str) {
+    ArrayManipulations.prototype.arraySplit = function (str) {
         var temp = str.split(",");
         var primeArray = [];
         var k = 0;
@@ -40,24 +40,24 @@ var ArrayComponent = /** @class */ (function () {
         }
         return primeArray;
     };
-    ArrayComponent.prototype.arraySort = function (myArray) {
+    ArrayManipulations.prototype.arraySort = function (myArray) {
         myArray.sort();
         myArray.reverse();
         return myArray;
     };
-    ArrayComponent.prototype.arrayReplace = function (myArray) {
+    ArrayManipulations.prototype.arrayReplace = function (myArray) {
         for (var i = 0; i < myArray.length; i++) {
             if (myArray[i] % 3 === 0)
                 myArray[i] = 5;
         }
         return myArray;
     };
-    return ArrayComponent;
+    return ArrayManipulations;
 }());
-exports.ArrayComponent = ArrayComponent;
+exports.ArrayManipulations = ArrayManipulations;
 var myArray = [34, 45, 60, 23, 13, 25, 70];
-var array = new ArrayComponent();
-console.log(array.arrayMultiply(myArray));
+var array = new ArrayManipulations();
+console.log(array.arrayFindMultiples(myArray));
 console.log(array.arraySeparate(myArray));
 console.log(array.arraySort(myArray));
 console.log(array.arrayReplace(myArray));
